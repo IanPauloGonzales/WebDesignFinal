@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDesign_Website Links</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Reset styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://imagedelivery.net/9sCnq8t6WEGNay0RAQNdvQ/clcgqdwc5022xp6kage7ewd1h/public');
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Header */
+    header {
+        background-image: url('https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg');
+        background-color: #37a5c7;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+        
+        
+        #activities-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #activities-list li {
+            flex: 0 0 200px;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        #activities-list li span {
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+            padding: 4px;
+            border: 2px solid darkblue;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: zoomInOut 3s infinite alternate;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5),
+                         0 0 20px rgba(0, 255, 0, 0.5),
+                         0 0 30px rgba(0, 0, 255, 0.5);
+        }
+    
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    
+        /* Main Section */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #fff; /* Adjusted text color */
+        }
+    
+        h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    
+        p {
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+    
+        li {
+            margin-bottom: 10px;
+        }
+    
+        a {
+            display: flex;
+            align-items: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    
+        /* Search Bar */
+        #search-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    
+        #search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 250px;
+            margin-right: 10px;
+        }
+    
+        #search-button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        /* Footer */
+        footer {
+            background-color: #2d778d;
+            color: #56a2c0;
+            padding: 10px;
+            text-align: center;
+        }
+    
+        footer p {
+            margin: 0;
+        }
+        
+        /* 3D Cartoon Push Button */
+        .push-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #37a5c7;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .push-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .push-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    
+    <script>
+    // JavaScript code
+    document.addEventListener('DOMContentLoaded', () => {
+        // Smooth scrolling for anchor links
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    
+        // Form validation
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+    
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+    
+            const searchQuery = searchInput.value.toLowerCase();
+            const activities = document.querySelectorAll('#activities-list li');
+    
+            activities.forEach(activity => {
+                const activityName = activity.querySelector('a').innerText.toLowerCase();
+                activity.style.display = activityName.includes(searchQuery) ? 'block' : 'none';
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    
+    <main>
+        <h2>Activities</h2>
+        <p>This is a list of my activities:</p>
+        
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="submit" id="search-button">Search</button>
+        </form>
+        
+        <ul id="activities-list">
+            <li>
+                <a href="https://ianpaulogonzales.github.io/mod11/" target="_blank" rel="noopener">
+                    <img src="https://media.discordapp.net/attachments/867661379174268938/1111897645405974568/image.png?width=317&height=401" alt="Media">
+                    <span class="push-button">Media</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ianpaulogonzales.github.io/ecternalcss/" target="_blank" rel="noopener">
+                    <img src="https://media.discordapp.net/attachments/867661379174268938/1111897953041395772/image.png?width=873&height=401" alt="External CSS">
+                    <span class="push-button">External CSS</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ianpaulogonzales.github.io/mod12_forms/" target="_blank" rel="noopener">
+                    <img src="https://media.discordapp.net/attachments/867661379174268938/1111941921334640722/image.png?width=459&height=401" alt="Forms">
+                    <span class="push-button">Forms</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ianpaulogonzales.github.io/tabel/tablerows.html" target="_blank" rel="noopener">
+                    <img src="https://media.discordapp.net/attachments/867661379174268938/1111902537952546856/image.png?width=708&height=401" alt="Table Structure">
+                    <span class="push-button">Table Structure</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ianpaulogonzales.github.io/Gonzales_Linkagess/" target="_blank" rel="noopener">
+                    <img src="https://media.discordapp.net/attachments/867661379174268938/1111902631045120060/image.png?width=890&height=401" alt="Linkages">
+                    <span class="push-button">Linkages</span>
+                </a>
+            </li>
+        </ul>
+    </main>
+    
+    <footer>
+        <p>© 2023 Ian Paulo B. Gonzales</p>
+    </footer>
+</body>
+</html>
+
